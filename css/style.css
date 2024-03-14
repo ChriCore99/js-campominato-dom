@@ -1,0 +1,99 @@
+/* RESET RULES */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol, menu {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+/* STYLE */
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.btn {
+    cursor: pointer;
+    width: fit-content;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+}
+
+.cont {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+main {
+    background-color: greenyellow;
+}
+
+section {
+    width: 750px;
+    aspect-ratio: 1 /1;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.cont {
+    display: flex;
+    align-items: center;
+}
+
+.griglia {
+    display: grid;
+}
+
+.facile {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.medio {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.difficile {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.cella {
+    aspect-ratio: 1 / 1;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.bg-blu {
+    background-color: blue;
+}
+
+footer .container {
+    height: 100px;
+}
+
+/* UTILITIES */
+
+/* DEBUG */
