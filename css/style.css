@@ -46,7 +46,7 @@ h1 {
 }
 
 main {
-    background-color: greenyellow;
+    background-color: midnightblue;
 }
 
 section {
@@ -86,8 +86,12 @@ section {
     padding-top: 25px;
 }
 
-.bg-blu {
-    background-color: blue;
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: greenyellow;
 }
 
 footer .container {

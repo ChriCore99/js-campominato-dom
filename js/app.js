@@ -6,6 +6,25 @@ const elementoSelect = document.getElementById('select');
 
 bottone.addEventListener('click', function(){
     const grigliaGrid = document.querySelector('.griglia');
+
+    // generare 16 numeri diversi randomconst
+    const min = 1;
+    let max = 100;
+    const numeriRandom = 16;
+
+    const arrayBombe = [];
+
+    while (arrayBombe.length < numeriRandom) {
+        // Genero un numero casuale
+        const numeroRandom = Math.floor(Math.random() * max) + min;
+
+        if (arrayBombe.includes(numeroRandom) === false) {
+            arrayBombe.push(numeroRandom);
+        }
+    }
+    console.log(arrayBombe);
+
+    // generiamo gli elementi della griglia
     let elementiRiga;
 
     if (elementoSelect.value === 'facile'){
@@ -32,10 +51,22 @@ bottone.addEventListener('click', function(){
         grigliaGrid.append(elementoCella);                     // inserisco la cella nella griglia
 
         elementoCella.addEventListener('click', function(){
-            elementoCella.classList.toggle('bg-blu');
+            elementoCella.classList.add('bg-green');
+
+            for(let i = 0; i < arrayBombe.length; i++){
+                const cellaBomba = arrayBombe[i];
+                if(parseInt(elementoCella.innerHTML) === cellaBomba){
+                    elementoCella.classList.remove('bg-green');
+                    elementoCella.classList.add('bg-red');
+                }
+            }
+            
             console.log(numeri);
         })
     } 
 })
-// Ogni cella ha un numero progressivo, da 1 a 100. Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-// Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
+
+
+
+// far diventare la cella rossa se boma e verde se non è bomba
+// 
