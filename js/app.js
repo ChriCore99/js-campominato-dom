@@ -6,10 +6,18 @@ const elementoSelect = document.getElementById('select');
 
 bottone.addEventListener('click', function(){
     const grigliaGrid = document.querySelector('.griglia');
+    grigliaGrid.classList.remove('pointer-none')
 
     // generare 16 numeri diversi randomconst
     const min = 1;
-    let max = 100;
+    let max;
+    if (elementoSelect.value === 'facile'){
+       max = 100;
+    } else if (elementoSelect.value === 'medio'){
+        max = 81;
+    } else if (elementoSelect.value === 'difficile'){
+        max = 49;
+    }
     const numeriRandom = 16;
 
     const arrayBombe = [];
@@ -42,6 +50,9 @@ bottone.addEventListener('click', function(){
 
     grigliaGrid.innerHTML = '';
 
+    let punti = document.querySelector('.punti');
+    punti.innerHTML = 0;
+
     for(let i = 0; i < numeroElementi; i++){
         const numeri = i + 1;
 
@@ -52,12 +63,15 @@ bottone.addEventListener('click', function(){
 
         elementoCella.addEventListener('click', function(){
             elementoCella.classList.add('bg-green');
+            punti.innerHTML++;
 
             for(let i = 0; i < arrayBombe.length; i++){
                 const cellaBomba = arrayBombe[i];
                 if(parseInt(elementoCella.innerHTML) === cellaBomba){
                     elementoCella.classList.remove('bg-green');
                     elementoCella.classList.add('bg-red');
+                    grigliaGrid.classList.add('pointer-none');
+                    punti.innerHTML--;
                 }
             }
             

@@ -92,10 +92,15 @@ section {
 
 .bg-green {
     background-color: greenyellow;
+    pointer-events: none;
 }
 
 footer .container {
     height: 100px;
+}
+
+.pointer-none {
+    pointer-events: none;
 }
 
 /* UTILITIES */
